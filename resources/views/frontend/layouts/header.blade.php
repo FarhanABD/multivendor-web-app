@@ -9,7 +9,7 @@
             <div class="col-xl-2 col-7 col-md-8 col-lg-2">
                 <div class="wsus_logo_area">
                     <a class="wsus__header_logo" href="index.html">
-                        <img src="{{asset('frontend/images/logo_2.png')}}" alt="logo" class="img-fluid w-100">
+                        <img src="{{asset('frontend/images/shopify-logo.png')}}" alt="logo" class="img-fluid w-100">
                     </a>
                 </div>
             </div>
@@ -28,8 +28,8 @@
                             <i class="fas fa-user-headset"></i>
                         </div>
                         <div class="wsus__call_text">
-                            <p>example@gmail.com</p>
-                            <p>+569875544220</p>
+                            <p>farhanabdilah204@.com</p>
+                            <p>+62 81353401336</p>
                         </div>
                     </div>
                     <ul class="wsus__icon_area">
@@ -47,7 +47,7 @@
         <ul>
             <li>
                 <div class="wsus__cart_img">
-                    <a href="#"><img src="images/tab_2.jpg" alt="product" class="img-fluid w-100"></a>
+                    <a href="#"><img src="{{asset('frontend/images/tab_2.jpg')}}" alt="product" class="img-fluid w-100"></a>
                     <a class="wsis__del_icon" href="#"><i class="fas fa-minus-circle"></i></a>
                 </div>
                 <div class="wsus__cart_text">
@@ -57,7 +57,7 @@
             </li>
             <li>
                 <div class="wsus__cart_img">
-                    <a href="#"><img src="images/pro4.jpg" alt="product" class="img-fluid w-100"></a>
+                    <a href="#"><img src="{{asset('frontend/images/pro4.jpg')}}" alt="product" class="img-fluid w-100"></a>
                     <a class="wsis__del_icon" href="#"><i class="fas fa-minus-circle"></i></a>
                 </div>
                 <div class="wsus__cart_text">
