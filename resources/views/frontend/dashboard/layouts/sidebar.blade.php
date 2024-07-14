@@ -1,4 +1,3 @@
-
 <div class="dashboard_sidebar">
     <span class="close_icon">
       <i class="far fa-bars dash_bar"></i>
