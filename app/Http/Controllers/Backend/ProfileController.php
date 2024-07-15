@@ -15,18 +15,23 @@ class ProfileController extends Controller
     }
 
     public function updateProfile(Request $request){
+        //--------- VALIDASI DATA --------------//
        $request->validate([
         'name' => ['required', 'max:100'],
         'email' => ['required', 'email','unique:users,email,'.Auth::user()->id],
         'image' => ['image','max:2048']
-        
        ]);
-       $user = Auth::user();
+       //-------------------------------------// 
 
+       //------ Kondisi menampilkan gambar default saat gambar kosong ----------//
+       $user = Auth::user();
        if($request->hasFile('image')){
         if(File::exists(public_path($user->image))){
             File::delete(public_path($user->image));
         }
+        //----------------------------------------------//
+
+         //------------ FUNCTION UNTUK MENYIMPAN GAMBAR YANG DIUPLOAD -----------------//
         $image = $request->image;
         $imageName = rand().'_'.$image->getClientOriginalName();
         $image->move(public_path('uploads'),$imageName);
@@ -35,6 +40,7 @@ class ProfileController extends Controller
         $user->image = $path;
        }
        
+       //--------- UPDATE USERNAME & EMAIL -------------//
        $user->name = $request->name;
        $user->email = $request->email;
        $user->save();
