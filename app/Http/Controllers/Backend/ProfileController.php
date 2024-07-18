@@ -25,6 +25,7 @@ class ProfileController extends Controller
 
        //------ Kondisi menampilkan gambar default saat gambar kosong ----------//
        $user = Auth::user();
+       
        if($request->hasFile('image')){
         if(File::exists(public_path($user->image))){
             File::delete(public_path($user->image));
