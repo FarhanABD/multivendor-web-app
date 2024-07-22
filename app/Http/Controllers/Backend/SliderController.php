@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\DataTables\SliderDataTable;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,13 +10,14 @@ use App\Traits\ImageUploadTrait;
 
 class SliderController extends Controller
 {
+    //----------------- PANGGIL CLASS ImageUploadTrait -----------//
     use ImageUploadTrait;
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(SliderDataTable $dataTable)
     {
-        return view('admin.slider.index');
+        return $dataTable->render('admin.slider.index');
     }
 
     /**
@@ -50,7 +52,7 @@ class SliderController extends Controller
         $slider->banner = $imagePath;
         $slider->type = $request->type;
         $slider->title = $request->title;
-        $slider->price = $request->starting_price;
+        $slider->starting_price = $request->starting_price;
         $slider->btn_url = $request->btn_url;
         $slider->serial = $request->serial;
         $slider->status = $request->status;

@@ -40,6 +40,7 @@ class ProfileController extends Controller
         $path = "/uploads/".$imageName;
         $user->image = $path;
        }
+       //===================== NEDS OF FUNCTION =============================//
        
        //--------- UPDATE USERNAME & EMAIL -------------//
        $user->name = $request->name;
