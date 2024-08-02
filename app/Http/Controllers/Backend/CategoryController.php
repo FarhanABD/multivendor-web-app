@@ -8,20 +8,15 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index(CategoryDataTable $dataTable)
     {
         return $dataTable->render('admin.category.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
