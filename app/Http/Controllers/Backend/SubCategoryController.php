@@ -41,9 +41,10 @@ class SubCategoryController extends Controller
         ]);
 
         $subCategory = new SubCategory();
+
         $subCategory->category_id = $request->category;
         $subCategory->name = $request->name;
-        $subCategory->slug = Str::slug($request->slug);
+        $subCategory->slug = Str::slug($request->name);
         $subCategory->status = $request->status;
         $subCategory->save();
         
