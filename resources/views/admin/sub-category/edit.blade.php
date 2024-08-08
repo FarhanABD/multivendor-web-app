@@ -4,7 +4,7 @@
     <section class="section">
       <div class="section-header">
         <div class="section-header-back">
-          <a href="{{ route('admin.category.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
+          <a href="{{ route('admin.sub-category.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
         </div>
         <h1>Category</h1>
       </div>
