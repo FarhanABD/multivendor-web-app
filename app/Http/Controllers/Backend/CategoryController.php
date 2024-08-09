@@ -56,6 +56,8 @@ class CategoryController extends Controller
         return view('admin.category.edit',compact('category'));
     }
 
+    
+
     /**
      * Update the specified resource in storage.
      */
@@ -79,18 +81,8 @@ class CategoryController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        $category = Category::findorfail($id);
-        $category->delete();
-        return response(['status'=>'success','message'=> 'Deleted Successfully']);
-    }
-
     public function changeStatus(Request $request)
-{
+    {
     try {
         $category = Category::findOrFail($request->id);
         $category->status = $request->status == 'true' ? 1 : 0;
@@ -112,6 +104,17 @@ class CategoryController extends Controller
     }
 }
 
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $category = Category::findorfail($id);
+        $category->delete();
+        return response(['status'=>'success','message'=> 'Deleted Successfully']);
+    }
+
     
+
 
 }

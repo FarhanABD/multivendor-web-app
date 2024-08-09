@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>General Dashboard &mdash; Stisla</title>
+  <title>General Dashboard &mdash; Shopify</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{asset('backend/assets/modules/bootstrap/css/bootstrap.min.css')}}">
@@ -54,9 +54,7 @@
        @yield('content')
       </div>
       <footer class="main-footer">
-        <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
-        </div>
+      
         <div class="footer-right">
           
         </div>

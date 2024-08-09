@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\DataTables\SubCategoryDataTable;
 
@@ -93,6 +94,29 @@ class SubCategoryController extends Controller
          return redirect()->route('admin.sub-category.index');
     }
 
+    public function changeStatus(Request $request)
+    {
+    try {
+        $subCategory = Category::findOrFail($request->id);
+        $subCategory->status = $request->status == 'true' ? 1 : 0;
+        $subCategory->save();
+
+        return response(['message' => 'Status  Updated Successfully']);
+        
+    } catch (\Illuminate\Database\QueryException $e) {
+        // Handle database-related errors
+        Log::error('Database error: ' . $e->getMessage());
+        return response(['message' => 'An error occurred while accessing the database'], 500);
+    } catch (\Illuminate\Validation\ValidationException $e) {
+        // Handle validation errors
+        return response(['message' => 'Validation error: ' . $e->getMessage()], 422);
+    } catch (\Exception $e) {
+        // Handle other exceptions
+        Log::error('General error: ' . $e->getMessage());
+        return response(['message' => 'An unexpected error occurred'], 500);
+    }
+}
+
     /**
      * Remove the specified resource from storage.
      */
@@ -102,4 +126,6 @@ class SubCategoryController extends Controller
         $subCategory->delete();
         return response(['status'=>'success','message'=> 'Deleted Successfully']);
     }
+
+    
 }
