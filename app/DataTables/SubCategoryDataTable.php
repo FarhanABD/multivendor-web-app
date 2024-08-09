@@ -44,7 +44,6 @@ class SubCategoryDataTable extends DataTable
                     </label';
                 }
                 return $button;
-                
             })
             ->rawColumns(['action','status'])
             ->setRowId('id');

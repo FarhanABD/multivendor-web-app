@@ -6,7 +6,7 @@
         <div class="section-header-back">
           <a href="{{ route('admin.sub-category.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
         </div>
-        <h1>Sub Category</h1>
+        <h1>Child Category</h1>
       </div>
 
       <div class="section-body">
@@ -15,7 +15,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h4>Create Sub Category</h4>
+                <h4>Create Child Category</h4>
               </div>
               <div class="card-body">
                 <form action="{{ route('admin.sub-category.store') }}" method="POST" enctype="multipart/form-data">
@@ -32,7 +32,7 @@
                 </div>
                   <div class="form-group">
                     <label for="inputState">Sub Category</label>
-                    <select id="inputState" name="category" class="form-control">
+                    <select id="inputState" name="category" class="form-control sub-category">
                         <option value="" >Select</option>
                     </select>
                 </div>
@@ -74,8 +74,9 @@
           },
           success: function(data) {
             console.log(data);
+            $('.sub-category').html(' <option value="" >Select</option>');
             $.each(data, function(i, item) {
-              console.log(item);
+              $('.sub-category').append(`<option value="${item.id}">${item.name}</option>`)
             })
           },
           error: function(xhr, status, error){
