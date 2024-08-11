@@ -63,8 +63,24 @@
             47
           </div>
         </div>
+
       </div>
-    </div>                  
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h4>Slider uploaded Images</h4>
+      </div>
+      <div class="card-body">
+
+        
+
+        
+
+      </div>
+    </div>
+       
+
   </div>
 </section>
 @endsection
