@@ -4,7 +4,7 @@
     <section class="section">
       <div class="section-header">
         <div class="section-header-back">
-          <a href="{{ route('admin.sub-category.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
+          <a href="{{ route('admin.child-category.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
         </div>
         <h1>Child Category</h1>
       </div>
@@ -18,8 +18,9 @@
                 <h4>Create Child Category</h4>
               </div>
               <div class="card-body">
-                <form action="{{ route('admin.sub-category.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.child-category.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
+
                   <div class="form-group">
                     <label for="inputState">Category</label>
                     <select id="inputState" name="category" class="form-control main-category">
@@ -30,12 +31,13 @@
                        
                     </select>
                 </div>
+
                   <div class="form-group">
                     <label for="inputState">Sub Category</label>
-                    <select id="inputState" name="category" class="form-control sub-category">
+                    <select id="inputState" name="sub_category" class="form-control sub-category">
                         <option value="" >Select</option>
                     </select>
-                </div>
+                  </div>
 
                     <div class="form-group">
                         <label>Name</label>
@@ -49,6 +51,7 @@
                             <option value="0" >Inactive</option>
                         </select>
                     </div>
+
                     <button type="submit" class="btn btn-primary"> Create </button>
                 </form>
               </div>

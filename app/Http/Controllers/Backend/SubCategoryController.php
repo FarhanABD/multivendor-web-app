@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\DataTables\SubCategoryDataTable;
+use App\Models\ChildCategory;
 
 class SubCategoryController extends Controller
 {
@@ -68,6 +69,7 @@ class SubCategoryController extends Controller
     {
         $categories = Category::all();
         $subCategory = SubCategory::findorfail($id);
+        
         return view('admin.sub-category.edit',compact('subCategory','categories'));
     }
 
@@ -97,7 +99,7 @@ class SubCategoryController extends Controller
     public function changeStatus(Request $request)
     {
     try {
-        $subCategory = Category::findOrFail($request->id);
+        $subCategory = SubCategory::findOrFail($request->id);
         $subCategory->status = $request->status == 'true' ? 1 : 0;
         $subCategory->save();
 
@@ -123,6 +125,11 @@ class SubCategoryController extends Controller
     public function destroy(string $id)
     {
         $subCategory = SubCategory::findorfail($id);
+        $childCategory = ChildCategory::where('sub_category_id',$subCategory->id)->count();
+        
+        if($childCategory > 0){
+            return response(['status'=>'error','message'=> 'This item contain sub item']);
+        }
         $subCategory->delete();
         return response(['status'=>'success','message'=> 'Deleted Successfully']);
     }
