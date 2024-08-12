@@ -83,7 +83,7 @@
   <script src="https://cdn.datatables.net/2.1.0/js/dataTables.bootstrap5.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="{{ asset('backend/assets/js/bootstrap-iconpicker.bundle.min.js') }}"></script>
-
+  <script src="https://kit.fontawesome.com/bf0e8ee774.js" crossorigin="anonymous"></script>
 
   <!-- Page Specific JS File -->
   <script src="{{asset('backend/assets/js/page/index-0.js')}}"></script>

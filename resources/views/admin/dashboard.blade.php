@@ -1,3 +1,7 @@
+@php
+  $slider = \App\Models\Slider::all('banner');
+@endphp
+
 @extends('admin.layouts.master')
 @section('content')
 <section class="section">
@@ -63,23 +67,38 @@
             47
           </div>
         </div>
-
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-header">
-        <h4>Slider uploaded Images</h4>
+    {{-- <div id="carouselExampleCaptions" class="carousel slide mt-4" data-ride="carousel" data-interval="3000">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          @foreach ($slider as $sliders )
+          <img src="{{ $sliders->banner }}" class="d-block w-100" alt="Image 2">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second Slide</h5>
+            <p>Description for the second slide.</p>
+          </div>
+          @endforeach
+         
+        </div>
       </div>
-      <div class="card-body">
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div> --}}
 
-        
-
-        
-
-      </div>
-    </div>
-       
+    
 
   </div>
 </section>
